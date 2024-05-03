@@ -1,0 +1,255 @@
+
+==========================
+SES3D Release R07-B: README
+==========================
+
+This is the release R07-B of SES3D, a program package for the simulation 
+of elastic wave propagation and waveform inversion in a spherical section. 
+The package is based on a spectral-element discretisation of the seismic 
+wave equation combined with adjoint techniques.
+
+SES3D supports 3D heterogeneous visco-elastic rheologies with radial anisotropy. 
+Anisotropic perfectly matched layers are implemented to avoid reflections 
+from the unphysical boundaries of the spherical section. 
+
+SES3D operates in the natural spherical coordinates, which is untypical for 
+spectral-element approaches. The advantages are a compact program code, 
+fast computations for spherical sections that are sufficiently far from 
+the poles and the core, and the easy implementation of 3D models.
+
+SES3D is fully parallelized, meaning that the computational domain is 
+partitioned into subdomains, each of which is assigned to one compute core. 
+Communication between subdomains is based on MPI.
+
+SES3D has been developed for continental-scale full seismic waveform inversion. 
+It is, however, applicable to a wide range of local- to continental-scale 
+wave propagation problems.
+
+------------------------------------
+Prerequisites for Using This Release
+------------------------------------
+
+This release of SES3D might be used with different platforms and programming
+environments.
+
+To build and use this release your will need a programming environment providing 
+the following components:
+
+  * C and Fortran compilers
+  * MPI implementation
+  * a tool for launching parallel MPI jobs
+  * (optional) a job scheduler for parallel computing systems
+
+You can use Cray, Intel, or GNU compilers to build SES3D software. The compilers
+of your choice must be compatible with your MPI implementation.
+
+The scripts for building and running the software components provided with this
+distribution are configured for the following environment: 
+
+  * Cray Programming Environment version 5.1 or higher
+  * Cray C and Fortran compilers
+  * Cray MPI
+  * Cray Application Layer Placement Scheduler (ALPS)
+  * SLURM workload manager
+
+If you are using a different environment, you should modify these scripts accordingly.
+
+To build and run GPU-enabled version you will also need:
+
+  * NVIDIA CUDA Toolkit version 5.5 or higher
+
+To use Python tools you will need Python interpreter and several Python packaged, 
+which include Numpy, Scipy, Mathplotlib, Basemap, and Obspy.
+
+-----------------------------
+Directory Structure and Files
+-----------------------------
+
+The following list gives an overview of SES3D directory structure. 
+
+./
+  README          : this file
+  NOTICE          : copyright information
+  LICENSE         : license information
+  ADJOINT/        : adjoint source time functions and a list of adjoint source locations
+  BUILD/          : build scripts for SES3D wave propagation
+  DATA/
+    COORDINATES/  : ASCII files containing the grid point coordinates for each model subdomain
+    LOGFILES/     : log files for each model subdomain
+    OUTPUT/       : directory reserved for output such as seismograms, 3D wave field snapshots,
+                    and 3D sensitivity kernels
+  DOC/            : documentation
+  INPUT/          : input files: setup (model geometry and parallelisation), list of events 
+                    to be modelled, event files (one for each earthquake to be modelled),
+                    list of receiver locations), source time function
+  MAIN/           : executables for SES3D wave propagation
+  SOURCE/         : source code for SES3D wave propagation
+  MODELS/
+    BUILD/        : build scripts for Earth model generation
+    MAIN/         : executables for the generation of Earth models
+    MODELS/       : physical model parameters
+    MODELS_3D/    : 3D Earth models or Earth model perturbations
+    SOURCE/       : source code for Earth model generation
+    TOOLS/        : collection of Python tools for visualisation, model manipulation and 
+                    the computation of adjoint sources
+      BUILD/      : build scripts for model manipulation tools
+      MAIN/       : executables for model manipulation tools
+      SOURCE/     : source code for model manipulation tools
+
+-----------
+Quick Start
+-----------
+
+The following instructions are designed to build the standard (not using GPU)
+version of SES3D and run a forward simulation with the supplied setup and model data.
+
+1) Set the environment variable SES3D_ROOT to the path of the directory containing 
+   this README file.
+
+2) Make sure that Cray Programming Environment is activated.
+
+3) Build the model generation programs:
+
+        cd $SES3D_ROOT/MODELS/BUILD
+        ./build_gm.sh
+        ./build_ap.sh
+
+    These commands will build the following executables:
+
+        $SES3D_ROOT/MODELS/MAIN/gm                  generator of initial 1D model
+        $SES3D_ROOT/MODELS/MAIN/add_perturbation    generator of 3D model perturbations
+
+4) Build the standard version of SES3D propagation program:
+
+        cd $SES3D_ROOT/BUILD
+        ./build_ses3d.sh
+
+    These commands will build the following executable for a standard version of SES3D:
+
+        $SES3D_ROOT/MAIN/ses3d
+
+5) Generate the initial Earth model:
+
+        cd $SES3D_ROOT/MODELS/MAIN
+        sbatch ./gm.sbatch
+
+    The initial 1D model will be generated with model files located in $SES3D_ROOT/MODELS/MODELS
+        
+6) Add perturbations to the initial Earth model:
+
+        sbatch ./ap.sbatch
+
+    The 3D perturbations specified in $SES3D_ROOT/MODELS/MODELS_3D will be added to the model.
+
+7) Run a forward simulation:
+
+        cd $SES3D_ROOT/MAIN
+        sbatch ./ses3d.sbatch 
+
+    On completion, the seismograms will be placed in the appropriate subdirectory of
+    $SES3D_ROOT/DATA/OUTPUT
+
+-----------------
+Configuring SES3D
+-----------------
+
+To define modelling scenario of your own, you should provide the corresponding contents
+for INPUT and MODELS/MODELS_3D directories replacing the demo data supplied with this
+distribution. The following files are relevant:
+
+    INPUT/
+        setup            : model geometry and parallelisation setup
+        event_list       : list of events (earthquakes) to be modelled
+        event_* ...      : event files (one for each event), specifying source parameters,
+                           output directory, and time stepping variables 
+        recfile_* ...    : lists of receiver locations (one for each event)
+        relax            : relaxation parameters
+        stf              : source time function
+
+    MODELS/MODELS_3D/
+        block_x          : colatitudinal grid spacing
+        block_y          : longitudinal grid spacing
+        block_z          : radial grid spacing
+        drho             : density perturbations
+        dvp              : P velocity perturbations
+        dvsh             : SH velocity perturbations
+        dvsv             : SV velocity perturbations
+
+The placeholder '*' in the event and receiver list file names stands for 
+the respective event names as specified in the event list file.
+
+Please refer to the SES3D documentation in DOC directory for the detailed description
+of the contents of these files.
+
+When the geometrical setup is changed, the configurations settings in the header file 
+SOURCE/ses3d_conf.h must be updated accordingly. These parameters include:
+
+    nx_max       : max elements in x direction per processing element - 1
+    ny_max       : max elements in y direction per processing element - 1
+    nz_max       : max elements in z direction per processing element - 1
+
+    lpd          : Lagrange polynomial degree
+    fw_lpd       : polynomial degree for the forward fields
+
+    maxnt        : maximum number of time steps
+    maxnr        : maximum number of receivers
+    pml          : width of the PML absorbing boundary region
+
+    nrdiss       : length of dissipation memory arrays
+
+    PML_LIMIT    : optional maximum number of time steps for which the PML mode is enabled
+
+Note that ses3d_conf.h defines two distinct sets of nx_max/ny_max/ny_max parameters.
+The first (in order of appearance) set corresponds to the GPU-enabled version and
+the second set corresponds to the standard version. You should modify the set(s)
+corresponding to the version(s) you intend to use.
+
+The polynomial degree for the forward fields (fw_lpd) is an integer value in the range
+between 0 and lpd that specifies the compression rate for intermediate wave fields
+generated and used during the adjoint mode computations. The value of 0 means maximum
+compression, while the value of lpd means no compression.
+
+The PML_LIMIT must be set to an integer value. A negative value means that the PML mode
+is enabled for all time steps. A value of 0 means that the PML mode is disabled for
+all time steps. A positive integer value N means that the PML mode is enabled for
+the first N time steps and disabled afterwards.
+
+(!) Note that the SES3D application must be rebuilt after every update made in ses3d_conf.h
+
+-----------
+What's next
+-----------
+
+Documentation for the original Fortran version of SES3D is available in
+
+    DOC/ses3d_documentation.pdf
+
+The original Fortran version is functionally equivalent to the release presented
+in this distribution, therefore the respective documentation is, with a few minor
+exceptions, applicable to the software in this distribution. Exceptions include
+the modified directory structure and different organisation of the source code
+written in C and CUDA in this release.
+
+Instructions specific to building and using SES3D on GPU-enabled platforms can
+be found in
+
+    DOC/README_gpu.txt
+
+The technical report dedicated to migration of SES3D to the heterogeneous computer
+"Piz Daint" of Cray XC30 family is available in
+
+    DOC/report_piz_daint.pdf
+
+This report provides advanced information, which may be of interest to the users
+who wish to run SES3D on the massively parallel GPU-enabled platforms.
+
+-------
+Contact
+-------
+
+Please address your questions, comments, and suggestions regarding this SES3D 
+distribution to the software authors:
+
+Andreas Fichtner        andreas.fichtner@erdw.ethz.ch
+Alexey Gokhberg         alexey.gokhberg@erdw.ethz.ch
+

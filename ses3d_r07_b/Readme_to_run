@@ -1,0 +1,10 @@
+Preparation:
+1) Earth velocity model in MODELS/MODELS_3D
+2) source.txt: Simulation parameters (number of steps) and time interval and preliminary source location (lat, lon, dep)
+3) stations.txt: Station location to simulate reciprocial Green's functions
+
+
+Step 1) Edit INPUT/setup file for the study region and compile MODELS/SOURCE and SOURCE
+Step 2) Run mesher in MODELS/MAIN
+Step 3) Prepare INPUT/source_grid.txt for the possible source grid points
+Step 4) Prepare source.txt and stations.txt files
