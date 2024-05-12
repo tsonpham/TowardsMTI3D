@@ -1,0 +1,11 @@
+#! /bin/bash
+#PBS -N main_cpu
+#PBS -q normal
+#PBS -P lv88
+#PBS -l walltime=08:00:00
+#PBS -l mem=36GB
+#PBS -l ncpus=9
+#PBS -l wd
+#PBS -l storage=gdata/lv88+gdata/gb32+gdata/dk92
+
+python mtinv.py
