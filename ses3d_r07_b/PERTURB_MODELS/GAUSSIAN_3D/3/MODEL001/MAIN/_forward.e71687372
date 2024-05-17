@@ -1,0 +1,4 @@
+Loading python3/3.10.4
+  Loading requirement: intel-mkl/2021.4.0
+[mpiexec@gadi-cpu-clx-1292.gadi.nci.org.au] wait_proxies_to_terminate (../../../../../src/pm/i_hydra/mpiexec/intel/i_mpiexec.c:558): downstream from host gadi-cpu-clx-1293.gadi.nci.org.au was killed by signal 15 (Terminated)
+[mpiexec@gadi-cpu-clx-1292.gadi.nci.org.au] wait_proxies_to_terminate (../../../../../src/pm/i_hydra/mpiexec/intel/i_mpiexec.c:558): downstream from host gadi-cpu-clx-1294.gadi.nci.org.au was killed by signal 15 (Terminated)

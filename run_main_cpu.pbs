@@ -8,4 +8,4 @@
 #PBS -l wd
 #PBS -l storage=gdata/lv88+gdata/gb32+gdata/dk92
 
-python mtinv.py
+python MainMTI.py

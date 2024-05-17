@@ -1,0 +1,13 @@
+
+======================================================================================
+                  Resource Usage on 2023-03-29 13:58:57:
+   Job Id:             78135546.gadi-pbs
+   Project:            lv88
+   Exit Status:        1
+   Service Units:      0.48
+   NCPUs Requested:    144                    NCPUs Used: 144             
+                                           CPU Time Used: 00:02:18        
+   Memory Requested:   192.0GB               Memory Used: 13.91GB         
+   Walltime requested: 03:00:00            Walltime Used: 00:00:06        
+   JobFS requested:    300.0MB                JobFS used: 0B              
+======================================================================================

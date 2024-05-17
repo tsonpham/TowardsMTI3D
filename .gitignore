@@ -1,8 +1,5 @@
 OLD/
-ses3d_r07_b/PERTURB_MODELS/
-*.[xyz]
 __pycache__/
-ses3d_r07_b/MODELS/MAIN/
-work_plan.txt
-tmp/
 .ipynb_checkpoints/
+Test1/
+Test2/

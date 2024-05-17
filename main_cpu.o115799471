@@ -1,0 +1,14 @@
+Run time: 7391.0 seconds
+
+======================================================================================
+                  Resource Usage on 2024-05-16 16:43:39:
+   Job Id:             115799471.gadi-pbs
+   Project:            lv88
+   Exit Status:        0
+   Service Units:      37.03
+   NCPUs Requested:    9                      NCPUs Used: 9               
+                                           CPU Time Used: 16:11:06        
+   Memory Requested:   36.0GB                Memory Used: 6.14GB          
+   Walltime requested: 08:00:00            Walltime Used: 02:03:27        
+   JobFS requested:    100.0MB                JobFS used: 0B              
+======================================================================================

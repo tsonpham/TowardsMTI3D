@@ -1,0 +1,7 @@
+## Simulatin parameter and preliminary source location
+5120                                    ! nt, number of time steps
+0.05                                    ! dt in sec, time increment
+5.0                                     ! shortest period of source time function
+41.320                                  ! latitude, center of source in degrees
+129.049                                 ! longitude, center of source in degrees
+1000.0                                   ! depth, source depth in (m)

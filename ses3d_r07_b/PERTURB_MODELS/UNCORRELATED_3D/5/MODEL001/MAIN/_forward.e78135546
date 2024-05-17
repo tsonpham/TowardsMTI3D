@@ -1,0 +1,141 @@
+Loading python3/3.10.4
+  Loading requirement: intel-mkl/2021.4.0
+Fatal error (thread 102): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 127): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 104): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 105): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 108): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 115): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 120): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 130): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 134): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 109): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 140): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 143): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 111): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 126): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 137): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 96): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 98): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 100): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 141): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 107): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 128): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 123): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 129): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 97): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 103): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 110): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 112): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 113): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 119): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 125): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 116): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 132): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 139): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 106): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 121): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 136): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 118): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 138): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 135): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 124): Cannot open file: ../MODELS/MODELS/boxfile
+
+Fatal error (thread 101): Cannot open file: ../MODELS/MODELS/boxfile
+
+Abort(1) on node 105 (rank 105 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 105
+Abort(1) on node 112 (rank 112 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 112
+Fatal error (thread 122): Cannot open file: ../MODELS/MODELS/boxfile
+
+Abort(1) on node 122 (rank 122 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 122
+Abort(1) on node 130 (rank 130 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 130
+Fatal error (thread 133): Cannot open file: ../MODELS/MODELS/boxfile
+
+Abort(1) on node 133 (rank 133 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 133
+Abort(1) on node 134 (rank 134 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 134
+Fatal error (thread 142): Cannot open file: ../MODELS/MODELS/boxfile
+
+Abort(1) on node 142 (rank 142 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 142
+Abort(1) on node 96 (rank 96 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 96
+Abort(1) on node 98 (rank 98 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 98
+Fatal error (thread 99): Cannot open file: ../MODELS/MODELS/boxfile
+
+Abort(1) on node 99 (rank 99 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 99
+Abort(1) on node 100 (rank 100 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 100
+Abort(1) on node 104 (rank 104 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 104
+Abort(1) on node 106 (rank 106 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 106
+Abort(1) on node 107 (rank 107 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 107
+Abort(1) on node 108 (rank 108 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 108
+Abort(1) on node 109 (rank 109 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 109
+Abort(1) on node 110 (rank 110 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 110
+Abort(1) on node 111 (rank 111 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 111
+Abort(1) on node 113 (rank 113 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 113
+Fatal error (thread 114): Cannot open file: ../MODELS/MODELS/boxfile
+
+Abort(1) on node 114 (rank 114 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 114
+Abort(1) on node 115 (rank 115 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 115
+Abort(1) on node 116 (rank 116 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 116
+Fatal error (thread 117): Cannot open file: ../MODELS/MODELS/boxfile
+
+Abort(1) on node 117 (rank 117 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 117
+Abort(1) on node 118 (rank 118 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 118
+Abort(1) on node 119 (rank 119 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 119
+Abort(1) on node 120 (rank 120 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 120
+Abort(1) on node 121 (rank 121 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 121
+Abort(1) on node 123 (rank 123 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 123
+Abort(1) on node 124 (rank 124 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 124
+Abort(1) on node 125 (rank 125 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 125
+Abort(1) on node 127 (rank 127 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 127
+Abort(1) on node 128 (rank 128 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 128
+Abort(1) on node 129 (rank 129 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 129
+Fatal error (thread 131): Cannot open file: ../MODELS/MODELS/boxfile
+
+Abort(1) on node 131 (rank 131 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 131
+Abort(1) on node 132 (rank 132 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 132
+Abort(1) on node 135 (rank 135 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 135
+Abort(1) on node 136 (rank 136 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 136
+Abort(1) on node 137 (rank 137 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 137
+Abort(1) on node 138 (rank 138 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 138
+Abort(1) on node 139 (rank 139 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 139
+Abort(1) on node 140 (rank 140 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 140
+Abort(1) on node 141 (rank 141 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 141
+Abort(1) on node 143 (rank 143 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 143

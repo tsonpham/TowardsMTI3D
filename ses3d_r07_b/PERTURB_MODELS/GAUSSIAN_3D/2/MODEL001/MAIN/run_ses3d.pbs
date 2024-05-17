@@ -1,0 +1,9 @@
+#! /bin/bash
+#PBS -N _forward
+#PBS -P gb32
+#PBS -l walltime=03:00:00
+#PBS -l mem=192GB
+#PBS -l ncpus=144
+#PBS -l wd
+#PBS -l storage=gdata/gb32
+mpirun -np 144 ./ses3d
