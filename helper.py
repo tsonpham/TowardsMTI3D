@@ -189,6 +189,7 @@ def _mt2lune(mxx, myy, mzz, mxy, mxz, myz):
     ## orientation angles determined from the eigen vector triple
     return gamma, 90 - beta
 mt2lune = np.vectorize(_mt2lune)
+def mt2lune2(m6): return mt2lune(*[np.array(m6)[...,i] for i in range(6)])
 
 def read_station_info(mask):
     from obspy.geodetics import gps2dist_azimuth
